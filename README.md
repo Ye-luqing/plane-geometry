@@ -1,4 +1,4 @@
-plan-geometry
+plane-geometry
 =============
 
 我对平面几何的学习记录
