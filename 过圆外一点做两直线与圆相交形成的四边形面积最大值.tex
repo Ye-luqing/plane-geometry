@@ -1,0 +1,228 @@
+\documentclass[a4paper, 12pt]{article} % Font size (can be 10pt, 11pt or 12pt) and paper size (remove a4paper for US letter paper)
+\usepackage{amsmath,amsfonts,bm}
+\usepackage{hyperref}
+\usepackage{amsthm,epigraph} 
+\usepackage{amssymb}
+\usepackage{framed,mdframed}
+\usepackage{graphicx,color} 
+\usepackage{mathrsfs,xcolor} 
+\usepackage[all]{xy}
+\usepackage{fancybox} 
+\usepackage{xeCJK}
+\usepackage{pstricks-add}
+\pagestyle{empty}
+\newtheorem*{adtheorem}{定理}
+\setCJKmainfont[BoldFont=FZYaoTi,ItalicFont=FZYaoTi]{FZYaoTi}
+\definecolor{shadecolor}{rgb}{1.0,0.9,0.9} %背景色为浅红色
+\newenvironment{theorem}
+{\bigskip\begin{mdframed}[backgroundcolor=gray!40,rightline=false,leftline=false,topline=false,bottomline=false]\begin{adtheorem}}
+    {\end{adtheorem}\end{mdframed}\bigskip}
+\newtheorem*{bdtheorem}{定义}
+\newenvironment{definition}
+{\bigskip\begin{mdframed}[backgroundcolor=gray!40,rightline=false,leftline=false,topline=false,bottomline=false]\begin{bdtheorem}}
+    {\end{bdtheorem}\end{mdframed}\bigskip}
+\newtheorem*{cdtheorem}{习题}
+\newenvironment{exercise}
+{\bigskip\begin{mdframed}[backgroundcolor=gray!40,rightline=false,leftline=false,topline=false,bottomline=false]\begin{cdtheorem}}
+    {\end{cdtheorem}\end{mdframed}\bigskip}
+\newtheorem*{ddtheorem}{注}
+\newenvironment{remark}
+{\bigskip\begin{mdframed}[backgroundcolor=gray!40,rightline=false,leftline=false,topline=false,bottomline=false]\begin{ddtheorem}}
+    {\end{ddtheorem}\end{mdframed}\bigskip}
+\newtheorem*{edtheorem}{引理}
+\newenvironment{lemma}
+{\bigskip\begin{mdframed}[backgroundcolor=gray!40,rightline=false,leftline=false,topline=false,bottomline=false]\begin{edtheorem}}
+    {\end{edtheorem}\end{mdframed}\bigskip}
+\newtheorem*{pdtheorem}{例}
+\newenvironment{example}
+{\bigskip\begin{mdframed}[backgroundcolor=gray!40,rightline=false,leftline=false,topline=false,bottomline=false]\begin{pdtheorem}}
+    {\end{pdtheorem}\end{mdframed}\bigskip}
+
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{wrapfig} % Allows in-line images
+\usepackage{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Required for accented characters
+\linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
+
+\makeatletter
+\renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
+\renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
+
+\renewcommand{\maketitle}{ % Customize the title - do not edit title
+  % and author name here, see the TITLE block
+  % below
+  \renewcommand\refname{参考文献}
+  \newcommand{\D}{\displaystyle}\newcommand{\ri}{\Rightarrow}
+  \newcommand{\ds}{\displaystyle} \renewcommand{\ni}{\noindent}
+  \newcommand{\pa}{\partial} \newcommand{\Om}{\Omega}
+  \newcommand{\om}{\omega} \newcommand{\sik}{\sum_{i=1}^k}
+  \newcommand{\vov}{\Vert\omega\Vert} \newcommand{\Umy}{U_{\mu_i,y^i}}
+  \newcommand{\lamns}{\lambda_n^{^{\scriptstyle\sigma}}}
+  \newcommand{\chiomn}{\chi_{_{\Omega_n}}}
+  \newcommand{\ullim}{\underline{\lim}} \newcommand{\bsy}{\boldsymbol}
+  \newcommand{\mvb}{\mathversion{bold}} \newcommand{\la}{\lambda}
+  \newcommand{\La}{\Lambda} \newcommand{\va}{\varepsilon}
+  \newcommand{\be}{\beta} \newcommand{\al}{\alpha}
+  \newcommand{\dis}{\displaystyle} \newcommand{\R}{{\mathbb R}}
+  \newcommand{\N}{{\mathbb N}} \newcommand{\cF}{{\mathcal F}}
+  \newcommand{\gB}{{\mathfrak B}} \newcommand{\eps}{\epsilon}
+  \begin{flushright} % Right align
+    {\LARGE\@title} % Increase the font size of the title
+    
+    \vspace{50pt} % Some vertical space between the title and author name
+    
+    {\large\@author} % Author name
+    \\\@date % Date
+    
+    \vspace{40pt} % Some vertical space between the author block and abstract
+  \end{flushright}
+}
+
+% ----------------------------------------------------------------------------------------
+%	TITLE
+% ----------------------------------------------------------------------------------------
+\begin{document}
+\title{\textbf{过圆外一点做两直线与圆相交形成的四边形面积最大值,未完成}} 
+% \setlength\epigraphwidth{0.7\linewidth}
+\author{\small{叶卢庆}\\{\small{杭州师范大学理学院}}\\{\small{Email:h5411167@gmail.com}}} % Institution
+\renewcommand{\today}{\number\year. \number\month. \number\day}
+\date{\today} % Date
+
+% ----------------------------------------------------------------------------------------
+
+
+\maketitle % Print the title section
+
+% ----------------------------------------------------------------------------------------
+%	ABSTRACT AND KEYWORDS
+% ----------------------------------------------------------------------------------------
+
+% \renewcommand{\abstractname}{摘要} % Uncomment to change the name of the abstract to something else
+
+% \begin{abstract}
+
+% \end{abstract}
+
+% \hspace*{3,6mm}\textit{关键词:}  % Keywords
+
+% \vspace{30pt} % Some vertical space between the abstract and first section
+
+% ----------------------------------------------------------------------------------------
+%	ESSAY BODY
+% ----------------------------------------------------------------------------------------
+如图,已知一定圆,过圆外一定点 $P$ 作直线 $PD,PC$ 分别与圆相交于
+$A,B,C,D$ 四点.求四边形 $ABCD$ 的面积何时最大,以及最大值为多少.\\
+\newrgbcolor{xdxdff}{0.49 0.49 1}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-3.9,-6.06)(16.42,6.12)
+\pscircle(1.46,0.26){4.83}
+\psline(10.84,3.1)(-2.28,3.32)
+\psline(10.84,3.1)(-0.6,-4.11)
+\psline(-2.28,3.32)(-0.6,-4.11)
+\psline(5.34,3.15)(6.29,0.23)
+\begin{scriptsize}
+\psdots[dotstyle=*,linecolor=blue](1.46,0.26)
+\rput[bl](1.54,0.38){\blue{$O$}}
+\psdots[dotstyle=*,linecolor=blue](10.84,3.1)
+\rput[bl](10.92,3.22){\blue{$P$}}
+\psdots[dotstyle=*,linecolor=xdxdff](-2.28,3.32)
+\rput[bl](-2.2,3.44){\xdxdff{$D$}}
+\psdots[dotstyle=*,linecolor=xdxdff](-0.6,-4.11)
+\rput[bl](-0.52,-4){\xdxdff{$C$}}
+\psdots[dotstyle=*,linecolor=xdxdff](5.34,3.15)
+\rput[bl](5.42,3.26){\xdxdff{$A$}}
+\psdots[dotstyle=*,linecolor=darkgray](6.29,0.23)
+\rput[bl](6.38,0.36){\darkgray{$B$}}
+\end{scriptsize}
+\end{pspicture*}
+\begin{proof}[失败的尝试1]
+不妨设圆的半径为 $r$,点 $P$ 与圆心 $O$ 的距离为 $p$.则根据圆幂定理,可
+得
+\begin{equation}
+  \label{eq:1}
+  |PA||PD|=p^2-r^2.
+\end{equation}
+\begin{equation}
+  \label{eq:2}
+  |PB||PC|=p^2-r^2.
+\end{equation}
+由 \eqref{eq:1} 和 \eqref{eq:2} 可得
+\begin{equation}
+  \label{eq:3}
+  \frac{|PA|}{|PC|}=\frac{|PB|}{|PD|}=k.
+\end{equation}
+因此,三角形 $PAB$ 与三角形 $PCD$ 相似.且
+\begin{equation}
+  \label{eq:4}
+  \frac{S_{PAB}}{S_{PCD}}=k^2.
+\end{equation}
+将 \eqref{eq:3} 代入 \eqref{eq:1},可得
+\begin{equation}
+  \label{eq:5}
+  \frac{|PA||PB|}{p^2-r^2}=k,
+\end{equation}
+我们知道,
+\begin{equation}
+  \label{eq:6}
+  S_{ABCD}=S_{PCD}-S_{PAB}=S_{PAB}(\frac{1}{k^2}-1).
+\end{equation}
+因此将 \eqref{eq:5} 代入 \eqref{eq:6} 可得
+\begin{equation}
+  \label{eq:7}
+  S_{ABCD}=S_{PAB}\frac{(p^2-r^2)^2-|PA|^2|PB|^2}{|PA|^2|PB|^2}.
+\end{equation}
+我们知道,
+\begin{equation}
+  \label{eq:8}
+  S_{PAB}=\frac{1}{2}|PA||PB|\sin\angle APB,
+\end{equation}
+我们发现,将 \eqref{eq:8} 代入 \eqref{eq:7} 后并不能让四边形 $ABCD$ 的
+面积表达式简化.我们只好另寻它路.
+\end{proof}
+\begin{proof}[第二种解决方案]
+如图,\\
+\newrgbcolor{xdxdff}{0.49 0.49 1}
+\newrgbcolor{qqwuqq}{0 0.39 0}
+\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-4,-5.7)(15.52,5.53)
+\pscircle(1.46,0.26){4.83}
+\psline(10.84,3.1)(-2.28,3.32)
+\psline(10.84,3.1)(-0.6,-4.11)
+\psline(-2.28,3.32)(-0.6,-4.11)
+\psline(5.34,3.15)(6.29,0.23)
+\psline(-2.28,3.32)(1.46,0.26)
+\psline(1.46,0.26)(-0.6,-4.11)
+\psline(1.46,0.26)(5.34,3.15)
+\psline(1.46,0.26)(6.29,0.23)
+\pscustom[linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{\parametricplot{2.457041692520875}{4.272990348705159}{0.55*cos(t)+1.46|0.55*sin(t)+0.26}\lineto(1.46,0.26)\closepath}
+\pscustom[linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{\parametricplot{0.6401594336797238}{2.457041692520875}{0.55*cos(t)+1.46|0.55*sin(t)+0.26}\lineto(1.46,0.26)\closepath}
+\pscustom[linecolor=qqwuqq,fillcolor=qqwuqq,fillstyle=solid,opacity=0.1]{\parametricplot{-0.005897031940235101}{0.6401594336797239}{0.55*cos(t)+1.46|0.55*sin(t)+0.26}\lineto(1.46,0.26)\closepath}
+\begin{scriptsize}
+\psdots[dotstyle=*,linecolor=blue](1.46,0.26)
+\rput[bl](1.53,0.37){\blue{$O$}}
+\psdots[dotstyle=*,linecolor=blue](10.84,3.1)
+\rput[bl](10.91,3.21){\blue{$P$}}
+\psdots[dotstyle=*,linecolor=xdxdff](-2.28,3.32)
+\rput[bl](-2.21,3.43){\xdxdff{$D$}}
+\psdots[dotstyle=*,linecolor=xdxdff](-0.6,-4.11)
+\rput[bl](-0.51,-4){\xdxdff{$C$}}
+\psdots[dotstyle=*,linecolor=xdxdff](5.34,3.15)
+\rput[bl](5.4,3.26){\xdxdff{$A$}}
+\psdots[dotstyle=*,linecolor=darkgray](6.29,0.23)
+\rput[bl](6.36,0.35){\darkgray{$B$}}
+\rput[bl](1.07,0.11){\qqwuqq{$\alpha_1$}}
+\rput[bl](1.26,0.59){\qqwuqq{$\alpha_2$}}
+\rput[bl](1.97,0.46){\qqwuqq{$\alpha_3$}}
+\end{scriptsize}
+\end{pspicture*}
+\end{proof}
+% ----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+% ----------------------------------------------------------------------------------------
+
+\bibliographystyle{unsrt}
+
+\bibliography{sample}
+
+% ----------------------------------------------------------------------------------------
+\end{document}
